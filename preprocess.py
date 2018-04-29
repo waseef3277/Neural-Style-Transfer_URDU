@@ -12,7 +12,14 @@ from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
 from utils import render_fonts_image
-import arabic_reshaper
+from arabic_reshaper import ArabicReshaper
+configuration = {
+    'delete_harakat': True,
+    'support_ligatures': True,
+    'RIAL SIGN': False,  # Replace ر ي ا ل with ﷼
+    'use_unshaped_instead_of_isolated': True,
+}
+reshaper = ArabicReshaper(configuration=configuration)
 from bidi.algorithm import get_display
 import codecs
 from numpy import random
@@ -42,11 +49,11 @@ def generate_font_bitmaps(chars, font_path, char_size, canvas_size, x_offset, y_
 
 
 def process_font(chars, font_path, save_dir, x_offset=0, y_offset=0, mode='target'):
-    char_size = 64
-    canvas = 160
+    char_size = 32
+    canvas = 80
     if mode == 'source':
-        char_size *= 1
-        canvas *= 1
+        char_size *= 2
+        canvas *= 2
     font_bitmaps = generate_font_bitmaps(chars, font_path, char_size,
                                          canvas, x_offset, y_offset)
     _, ext = os.path.splitext(font_path)
@@ -57,7 +64,7 @@ def process_font(chars, font_path, save_dir, x_offset=0, y_offset=0, mode='targe
     bitmap_path = os.path.join(save_dir, "%s.npy" % font_name)
     np.save(bitmap_path, font_bitmaps)
     sample_image_path = os.path.join(save_dir, "%s_sample.png" % font_name)
-    random.shuffle(font_bitmaps)
+    #random.shuffle(font_bitmaps)
     render_fonts_image(font_bitmaps[:100], sample_image_path, 10, False)
     print("%s font %s saved at %s" % (mode, font_name, bitmap_path))
 
@@ -70,7 +77,7 @@ def get_chars_set(path):
         for line in f:
             line = u"%s" % line
             #char = line.split()[0]
-            reshaped_text = arabic_reshaper.reshape(line)
+            reshaped_text = reshaper.reshape(line)
             artext = get_display(reshaped_text)
             chars.append(artext)
     return chars
