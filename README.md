@@ -7,13 +7,13 @@ This project is an explorational take on this using deep learning. Specifically,
 from a standard look font, to an stylized target font. A neural network is trained to approximate the transformation in between two fonts given a subset of pairs of examples. Once the learning is finished, it can be used to
 infer the shape for the rest of characters.
 <p align="center">
-  <img src="https://github.com/waseef3277/Neural-Style-Transfer_URDU/new/master/images/motive.png?raw=true" alt="motive"/>
+  <img src="https://github.com/waseef3277/Neural-Style-Transfer_URDU/tree/master/images/motive.png?raw=true" alt="motive"/>
 </p>
 
 ## Network Structure
 We considered many structures and architectures for our network so that our task can complete accurately and within reasonable time, the structure we chose is shown below.
 <p align="center">
-  <img src="https://github.com/waseef3277/Neural-Style-Transfer_URDU/new/master/images/network-structure.png?raw=true" alt="network"/>
+  <img src="https://github.com/waseef3277/Neural-Style-Transfer_URDU/tree/master/images/network-structure.png?raw=true" alt="network"/>
 </p>
 
 ### Observations: 
