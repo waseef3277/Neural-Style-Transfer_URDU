@@ -52,7 +52,7 @@ The preprocess script accepts both TrueType and OpenType fonts, take a list of c
 After the preprocess step, you have the bitmaps for both source and target fonts, run the below command to start the training:
 
 ```sh
-python rewrite.py --mode=train \ 
+python transfer.py --mode=train \ 
                   --model=medium \
                   --source_font=src.npy \
                   --target_font=tgt.npy \ 
