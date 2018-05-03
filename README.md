@@ -44,7 +44,7 @@ python preprocess.py --source_font source_font.ttf \
 ```
 The preprocess script accepts both TrueType and OpenType fonts, take a list of characters (some common charsets are builtin in the charsets directory in this repo) then save the bitmaps of those characters in **.npy** format. By default, for the source font, each character will be saved with font size 64 on a 160x160 canvas, and target font with size 32 on 80x80 canvas, with respect.
 
-<img src="images/xb-niloofar-bold_sample.png" width="370"/> <img src="images/xb-khoramshahr-bold_sample.png" width="370"/>
+<img src="images/xb-niloofar-bold_sample.png" title="Source Font" width="370" hspace="20"/> <img src="images/xb-khoramshahr-bold_sample.png" title="Target Font" width="370" hspace="20"/>
 
 After the preprocess step, you have the bitmaps for both source and target fonts, run the below command to start the training:
 
