@@ -29,6 +29,9 @@ We considered many structures and architectures for our network so that our task
 ### Progress during training
 We trained the network on 2300 examples with number of layers equals to 3 and iterations equals to 4000. We can see how interesting it is that it converges from complete black noisy image to somehow rough shape of characters and then details keeps on adding with more iterations as it trains through the network.
 
+<video width="320" height="240" autoplay loop>
+  <source src="images/transition.mp4" type="video/mp4" />
+</video>
 
 ## Usage
 ### Requirements
