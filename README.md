@@ -1,5 +1,8 @@
 # Neural Style Transfer For Urdu Fonts
 
+#### Inspired by and adapted from kaonashi work: Rewrite - Neural Style Transfer for Chinese Characters 
+##### https://github.com/kaonashi-tyc/Rewrite
+
 ## Motivation
 Creating font is hard, and then creating an Urdu font is an even harder. To make a font for Urdu, designers will need to design unique looks for every Urdu character and every character combined with other characters, a effort that could take much time to complete.
 What if the designer just creates a subset of characters, then let computer figures out what the rest supposed to look like?
